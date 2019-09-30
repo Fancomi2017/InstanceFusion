@@ -140,6 +140,7 @@ PNGLogReader::~PNGLogReader()
 
 void PNGLogReader::getNext()
 {
+	has_instance_GT = false;
 	if ((lastGot + 1) < static_cast<int>(frames_.size())) 
 	{
 		lastGot++;

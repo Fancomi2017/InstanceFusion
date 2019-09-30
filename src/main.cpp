@@ -30,14 +30,14 @@ int main(int argc, char *argv[])
 	//Mask R-CNN
 	const int cnn_skip_frames = 3;
 	const int cnn_start_frames = 80;//80;
-	const int maskRcnnType = 0;
+	const int maskRcnnType = 1;
 
 	// flann frame
 	const int flann_skip_frames = 40;
 	
 	const bool debugMask = false;
 	
-	const bool hasInstanceGroundTruth = false;	//e.g. "scannet/instance"
+	const bool hasInstanceGroundTruth = true;	//e.g. "scannet/instance" scanNet中data.txt后半段可读（为true时），否则就要自己删掉后半段
 
 	const int instanceNum = 96;
 	const int width = 640;
