@@ -59,7 +59,7 @@ If both of the dependencies are working, make a build directory and compile - th
   `cmake ..`  
   `make -j8`   
     
-Finally, you need to modify the path information of the Mask-RCNN network, open~ /Instancefusion/build/ mask_ori.py and Change MASK_RCNN_DIR to the path of your Mask-RCNN.  
+Finally, you need to modify the path information of the Mask-RCNN network, such as open~ /Instancefusion/build/ mask_ori.py and Change MASK_RCNN_DIR to the path of your Mask-RCNN(~/Instancefusion/deps/mask_rcnn).  
 ## 2.Download Models
 The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn.
 ## 3.How to run it?  
