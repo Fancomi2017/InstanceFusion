@@ -43,7 +43,7 @@ struct FrameInfo {
 class PNGLogReader : public LogReader
 {
 public:
-	PNGLogReader(std::string file, std::string labels_file, bool hasInstanceGroundTruth);
+	PNGLogReader(std::string file, bool hasInstanceGroundTruth);
 
 	virtual ~PNGLogReader();
 

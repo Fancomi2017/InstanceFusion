@@ -31,14 +31,14 @@ class LogReader
 {
     public:
         LogReader(std::string file, bool flipColors)
-         : flipColors(flipColors),
-           timestamp(0),
-           depth(0),
-           rgb(0),
-           currentFrame(0),
-           decompressionBufferDepth(0),
-           decompressionBufferImage(0),
-           file(file),
+         : flipColors(flipColors),  // bool
+           timestamp(0), // int64_t
+           depth(0), // unsigned short *
+           rgb(0),  // unsigned char *
+           currentFrame(0), // int
+           decompressionBufferDepth(0), // Bytef *
+           decompressionBufferImage(0),// Bytef *
+           file(file),  // const std::string
            width(Resolution::getInstance().width()),
            height(Resolution::getInstance().height()),
            numPixels(width * height)
@@ -47,8 +47,8 @@ class LogReader
         virtual ~LogReader()
         {}
 
-        virtual void getNext() = 0;
-
+        virtual void getNext() = 0;  // 最后面的“=0”并不表示函数返回值为0，它只起形式上的作用，告诉编译系统“这是纯虚函数”; 纯虚函数只有函数的名字而不具备函数的功能，不能被调用。
+                                     // 它只是通知编译系统: “在这里声明一个虚函数，留待派生类中定义”。
         virtual int getNumFrames() = 0;
 
         virtual bool hasDepthFilled() { return false;}

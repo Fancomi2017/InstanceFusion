@@ -24,8 +24,9 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/core/core.hpp>
+using namespace std;
 
-PNGLogReader::PNGLogReader(std::string file, std::string labels_file, bool hasInstanceGroundTruth)
+PNGLogReader::PNGLogReader(std::string file, bool hasInstanceGroundTruth) // PNGLogReader用于加载已有的图像数据(不限于png)，需要手写data.txt严格遵守格式，其中为scanNet特别设置了GT的读取。
  : LogReader(file, true)
  , lastFrameTime(-1)
  , lastGot(-1)
@@ -45,8 +46,8 @@ PNGLogReader::PNGLogReader(std::string file, std::string labels_file, bool hasIn
 	std::string timestamp, depth_path, rgb_path, depth_id, rgb_id, instanceGT_path;
 
 	std::map<std::string,int> depth_id_lookup;
-	std::string scene_id = file.substr(file.rfind("/") + 1);
-	std::string base_path = file;
+	std::string scene_id = file.substr(file.rfind("/") + 1); // scene_id的值是：data.txt
+	std::string base_path = file; // base_path的值是：/media/jun/Data/YangJun/Data/data_wanna_run/Scenev2_trans/scene_09/data.txt
 	base_path.erase(base_path.rfind('/'));
 	std::cout<<"Looking for RGB/Depth images in folder:"<<base_path<<std::endl;
 	scene_id.erase(scene_id.length()-4);
@@ -108,26 +109,6 @@ PNGLogReader::PNGLogReader(std::string file, std::string labels_file, bool hasIn
 		}
 		infile.close();
 	}
-
-
-	//Check if any frames are labelled frames according to the input text file
-	std::ifstream inlabelfile(labels_file.c_str());
-	std::string frame_id;
-	while (inlabelfile >> depth_id >> rgb_id >> frame_id) 
-	{
-		if (depth_id_lookup.find(depth_id) != depth_id_lookup.end()) 
-		{
-			int found_id = depth_id_lookup[depth_id];
-			frames_[found_id].labeled_frame = true;
-			frames_[found_id].frame_id = frame_id;
-			std::cout<<"Found:"<<frames_[found_id].depth_path<<std::endl;
-			if (frames_[found_id].rgb_id != rgb_id) {
-				std::cout<<"Warning, unaligned RGB and Depth frames - depth wins"<<std::endl;
-			}
-			num_labelled++;
-		}
-	}
-	inlabelfile.close();
 }
 
 PNGLogReader::~PNGLogReader()
@@ -149,7 +130,7 @@ void PNGLogReader::getNext()
 
 		//rgb
 		cv::Mat rgb_image = cv::imread(info.rgb_path,CV_LOAD_IMAGE_COLOR);
-		if (flipColors) 
+		if (flipColors)
 		{
 			cv::cvtColor(rgb_image, rgb_image, CV_BGR2RGB); 
 		}
