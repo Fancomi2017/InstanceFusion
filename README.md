@@ -41,7 +41,7 @@ Python virtual environment:
     pip3 install pip --upgrade  
     pip3 install tensorflow-gpu==1.4.0  
     pip3 install scikit-image  
-    pip3 install keras  
+    pip3 install keras==2.0.8  
     pip3 install IPython  
     pip3 install h5py 
     pip3 install cython
