@@ -66,7 +66,7 @@ If you have a kinect camera and OpenNI2 working (i.e. you can run ElasticFusion 
   
   `./InstanceFusion`  
   
-You can test InstanceFusion on some dataset, such as scanNet(scanNet is available [here](https://github.com/ScanNet/ScanNet)) and dyson_lab.klg(available [here](https://www.doc.ic.ac.uk/~sleutene/datasets/elasticfusion/dyson_lab.klg)). To run on scanNet provide two arguments to the InstanceFusion program to save the prediction pngs to the working directory (NOTE the second argument does not indicate where predictions are saved, it is a textfile denoting which predictions should be saved):  
+You can test InstanceFusion on some dataset, such as  RGB-D Scenes Dataset v.2( RGB-D Scenes Dataset v.2 is available [here](http://rgbd-dataset.cs.washington.edu/dataset/rgbd-scenes-v2/)) and dyson_lab.klg(available [here](https://www.doc.ic.ac.uk/~sleutene/datasets/elasticfusion/dyson_lab.klg)). To run on scanNet provide two arguments to the InstanceFusion program to save the prediction pngs to the working directory (NOTE the second argument does not indicate where predictions are saved, it is a textfile denoting which predictions should be saved):  
   
   `./InstanceFusion /path/to/your/scanNet/RAW/scene0524_00/data.txt`  
   
