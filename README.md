@@ -70,7 +70,7 @@ You can test InstanceFusion on some dataset, such as  RGB-D Scenes Dataset v.2(R
   
   `./InstanceFusion /path/to/your/rgbd-scenes-v2/imgs/scene_09/data.txt`  
   
-And run dyson_lab.klg like this:
+And run on dyson_lab.klg like this:
   
   `./InstanceFusion -l /path/to/your/dyson_lab.klg`
 
