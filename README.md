@@ -66,7 +66,7 @@ If you have a kinect camera and OpenNI2 working (i.e. you can run ElasticFusion 
   
   `./InstanceFusion`  
   
-You can test InstanceFusion on some dataset, such as  RGB-D Scenes Dataset v.2(RGB-D Scenes Dataset v.2 is available [here](http://rgbd-dataset.cs.washington.edu/dataset/rgbd-scenes-v2/)) and dyson_lab.klg(available [here](https://www.doc.ic.ac.uk/~sleutene/datasets/elasticfusion/dyson_lab.klg)). After you download the dataset, you can run dataset/transform.py to generate data.txt. To run on RGB-D Scenes Dataset v.2, you should provide a parameter to tell the program where data.txt is,note that the path should not contain spaces:
+You can test InstanceFusion on some dataset, such as  RGB-D Scenes Dataset v.2(RGB-D Scenes Dataset v.2 is available [here](http://rgbd-dataset.cs.washington.edu/dataset/rgbd-scenes-v2/)) and dyson_lab.klg(available [here](https://www.doc.ic.ac.uk/~sleutene/datasets/elasticfusion/dyson_lab.klg)). After you download the dataset, you can run dataset/transform.py to generate data.txt. To run on RGB-D Scenes Dataset v.2, you should provide a parameter to tell the program where data.txt is, note that the path should not contain spaces:
   
   `./InstanceFusion /path/to/your/rgbd-scenes-v2/imgs/scene_09/data.txt`  
   
