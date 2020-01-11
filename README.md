@@ -104,6 +104,7 @@ cd /path/to/your/Instancefusion/deps/maskrcnn-benchmark-master
 # build Mask R-CNN Benchmark
 python setup.py build develop
 unset INSTALL_DIR
+```
 
 ## 2.Download Models
 The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn.
