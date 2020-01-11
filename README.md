@@ -5,7 +5,7 @@ We present a robust real-time system to detect, segment, and reconstruct instanc
 Please cite this work if you make use of our system in any of your own endeavors:
 * InstanceFusion: Real-time Instance-level 3D Reconstruction of Indoor Scenes using a Single RGBD Camera, Haotian Peng, Feixiang Lu, Ruizhi Cao, etc al, ICRA 2020 submission.
 ## 1.How to build it?  
-### 1.1 Build it with tensorflow version Mask R-CNN
+### 1.1 Build InstanceFusion with tensorflow version Mask R-CNN
 * Ubuntu 16.04(Though many other linux distros will work fine)  
 * CMake  
 * OpenGL  
