@@ -62,9 +62,48 @@ If both of the dependencies are working, make a build directory and compile - th
 Finally, you need to modify the path information of the Mask-RCNN network, such as open~ /Instancefusion/build/ mask_ori.py and Change MASK_RCNN_DIR to the path of your Mask-RCNN(~/Instancefusion/deps/mask_rcnn).  
 ### 1.2 Build it with pytorch version Mask R-CNN Benchmark
 After configuring the tensorflow version of Mask R-CNN, you can easily configure InstanceFusion with pytorch version Mask R-CNN Benchmark.
-*  Anaconda    
-*  python==3.6.2 in anaconda virtual environment  
-Before you configure the environment, you should create a virtual environment:conda create --name maskrcnn_benchmark -y.
+```bash
+# first, make sure that your anaconda is setup properly with the right environment
+
+conda create --name maskrcnn_benchmark -y
+source activate maskrcnn_benchmark
+
+# this installs the right pip and dependencies for the fresh python
+conda install ipython pip
+
+# maskrcnn_benchmark and coco api dependencies
+pip install ninja yacs cython matplotlib tqdm opencv-python
+
+# follow PyTorch installation in https://pytorch.org/get-started/locally/
+# we give the instructions for CUDA 8.0,
+pip3 install https://download.pytorch.org/whl/cu80/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
+pip3 install torchvision==0.2.2
+
+export INSTALL_DIR=$PWD
+
+# install pycocotools
+cd $INSTALL_DIR
+git clone https://github.com/cocodataset/cocoapi.git
+cd cocoapi/PythonAPI
+python setup.py build_ext install
+
+# install cityscapesScripts
+cd $INSTALL_DIR
+git clone https://github.com/mcordts/cityscapesScripts.git
+cd cityscapesScripts/
+python setup.py build_ext install
+
+# install apex
+cd $INSTALL_DIR
+git clone https://github.com/NVIDIA/apex.git
+cd apex
+python setup.py install --cuda_ext --cpp_ext
+
+# install PyTorch Detection
+cd /path/to/your/Instancefusion/deps/maskrcnn-benchmark-master
+# build Mask R-CNN Benchmark
+python setup.py build develop
+unset INSTALL_DIR
 
 ## 2.Download Models
 The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn.
