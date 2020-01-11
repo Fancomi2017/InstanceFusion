@@ -63,7 +63,8 @@ Finally, you need to modify the path information of the Mask-RCNN network, such 
 ### 1.2 Build InstanceFusion with pytorch version Mask R-CNN Benchmark
 To get a faster segmentation speed, you can build InstanceFusion with pytorch version Mask R-CNN Benchmark. After configuring the tensorflow version of Mask R-CNN, you can easily configure InstanceFusion with pytorch version Mask R-CNN Benchmark. Modify the `maskRcnnType` of ~InstanceFusion/src/main.cpp to 0, it means build Instancefusion with Mask R-CNN Benchmark. Modify the `MASKRCNN_BENCHMARK_DIR` of ~InstanceFusion/src/main.cpp to "~/Instancefusion/deps/maskrcnn-benchmark-master".
 ```bash
-# first, make sure that your anaconda is setup properly with the right environment, python version is 3.6.2
+# first, make sure that your anaconda is setup properly with the right environment
+# python version is 3.6.2 in the maskrcnn_benchmark virtual environment
 
 conda create --name maskrcnn_benchmark -y
 source activate maskrcnn_benchmark
