@@ -62,19 +62,8 @@ If both of the dependencies are working, make a build directory and compile - th
 Finally, you need to modify the path information of the Mask-RCNN network, such as open~ /Instancefusion/build/ mask_ori.py and Change MASK_RCNN_DIR to the path of your Mask-RCNN(~/Instancefusion/deps/mask_rcnn).  
 ### 1.2 Build it with pytorch version Mask R-CNN Benchmark
 After configuring the tensorflow version of Mask R-CNN, you can easily configure InstanceFusion with pytorch version Mask R-CNN Benchmark.
-* Ubuntu 16.04(Though many other linux distros will work fine)  
-* CMake  
-* OpenGL  
-* CUDA 8.0  
-*  OpenNI2  
-*  SuiteSparse  
-*  Eigen  
-*  zlib  
-*  libjpeg  
-*  opencv 3.1.0  
-*  Pangolin  
-*  libflann-dev  
 *  Anaconda    
+*  python==3.6.2 in anaconda virtual environment  
 
 ## 2.Download Models
 The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn.
