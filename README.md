@@ -109,12 +109,12 @@ You should modify the configuration file `/path/to/your/Instancefusion/deps/mask
 
 ```bash
 # compile InstanceFusion
-cd ~/Instancefusion/build
+cd ~/InstanceFusion/build
 cmake -D PYTHON_EXECUTABLE=~/anaconda3/envs/maskrcnn_benchmark/bin/python3.6 ..
 make -j16
 ```
 ## 2.Download Models
-The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn.
+The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn. The Mask-RCNN Benchmark models are available [here](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth)
 ## 3.How to run it?  
 If you have a kinect camera and OpenNI2 working (i.e. you can run ElasticFusion live) then you can run InstanceFusion classes by simply running the program with no arguments in the build directory. You need to make sure OpenNI2 can detect and access the feed from the camera.  
   
