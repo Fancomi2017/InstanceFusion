@@ -63,7 +63,7 @@ Finally, you need to modify the path information of the Mask-RCNN network, such 
 ### 1.2 Build it with pytorch version Mask R-CNN Benchmark
 After configuring the tensorflow version of Mask R-CNN, you can easily configure InstanceFusion with pytorch version Mask R-CNN Benchmark.Change the maskRcnnType of main.cpp in src to 0, it means build Instancefusion with Mask R-CNN Benchmark.
 ```bash
-# first, make sure that your anaconda is setup properly with the right environment
+# first, make sure that your anaconda is setup properly with the right environment, python version is 3.6.2
 
 conda create --name maskrcnn_benchmark -y
 source activate maskrcnn_benchmark
@@ -76,8 +76,8 @@ pip install ninja yacs cython matplotlib tqdm opencv-python
 
 # follow PyTorch installation in https://pytorch.org/get-started/locally/
 # we give the instructions for CUDA 8.0,
-pip3 install https://download.pytorch.org/whl/cu80/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
-pip3 install torchvision==0.2.2
+pip install https://download.pytorch.org/whl/cu80/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
+pip install torchvision==0.2.2
 
 export INSTALL_DIR=$PWD
 
