@@ -106,7 +106,7 @@ cd /path/to/your/Instancefusion/deps/maskrcnn-benchmark-master
 python setup.py build develop
 unset INSTALL_DIR
 ```
-You should open the configuration file `/path/to/your/Instancefusion/deps/maskrcnn-benchmark-master/configs/e2e_mask_rcnn_fbnet_xirb16d_dsmask_600.yaml`, modify `WEIGHT` to the path of your download maskrcnn network model e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth.(available [here](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth)).
+You should open the configuration file `/path/to/your/Instancefusion/deps/maskrcnn-benchmark-master/configs/e2e_mask_rcnn_fbnet_xirb16d_dsmask_600.yaml`, modify `WEIGHT` to the path of your download maskrcnn network model e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth(available [here](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth)).
 
 ```bash
 # compile InstanceFusion
