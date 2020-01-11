@@ -105,7 +105,7 @@ cd /path/to/your/Instancefusion/deps/maskrcnn-benchmark-master
 python setup.py build develop
 unset INSTALL_DIR
 ```
-You should modify the configuration file `/path/to/your/Instancefusion/deps/maskrcnn-benchmark-master/configs/e2e_mask_rcnn_fbnet_xirb16d_dsmask_600.yaml`, modify the content of WEIGHT as `/path/to/your/Instancefusion/deps/maskrcnn-benchmark-master/weights/e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth`
+You should modify the configuration file `/path/to/your/Instancefusion/deps/maskrcnn-benchmark-master/configs/e2e_mask_rcnn_fbnet_xirb16d_dsmask_600.yaml`, modify the content of WEIGHT to the path of maskrcnn network model e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth.(available [here](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth)).
 ## 2.Download Models
 The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn.
 ## 3.How to run it?  
