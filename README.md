@@ -64,6 +64,7 @@ Finally, you need to modify the path information of the Mask-RCNN network, such 
 After configuring the tensorflow version of Mask R-CNN, you can easily configure InstanceFusion with pytorch version Mask R-CNN Benchmark.
 *  Anaconda    
 *  python==3.6.2 in anaconda virtual environment  
+Before you configure the environment, you should create a virtual environment:conda create --name maskrcnn_benchmark -y.
 
 ## 2.Download Models
 The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn.
