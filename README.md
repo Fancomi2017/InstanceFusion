@@ -61,7 +61,7 @@ If both of the dependencies are working, make a build directory and compile - th
     
 Finally, you need to modify the path information of the Mask-RCNN network, such as open~ /Instancefusion/build/ mask_ori.py and Change MASK_RCNN_DIR to the path of your Mask-RCNN(~/Instancefusion/deps/mask_rcnn).  
 ### 1.2 Build it with pytorch version Mask R-CNN Benchmark
-After configuring the tensorflow version of Mask R-CNN, you can easily configure InstanceFusion with pytorch version Mask R-CNN Benchmark.
+After configuring the tensorflow version of Mask R-CNN, you can easily configure InstanceFusion with pytorch version Mask R-CNN Benchmark.Change the maskRcnnType of main.cpp in src to 0, it means build Instancefusion with Mask R-CNN Benchmark.
 ```bash
 # first, make sure that your anaconda is setup properly with the right environment
 
@@ -106,6 +106,13 @@ python setup.py build develop
 unset INSTALL_DIR
 ```
 You should modify the configuration file `/path/to/your/Instancefusion/deps/maskrcnn-benchmark-master/configs/e2e_mask_rcnn_fbnet_xirb16d_dsmask_600.yaml`, modify the content of WEIGHT to the path of maskrcnn network model e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth.(available [here](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth)).
+
+```bash
+# compile InstanceFusion
+cd ~/Instancefusion/build
+cmake -D PYTHON_EXECUTABLE=~/anaconda3/envs/maskrcnn_benchmark/bin/python3.6 ..
+make -j16
+```
 ## 2.Download Models
 The Mask-RCNN models are available [here](https://github.com/matterport/Mask_RCNN/releases) with the mask_rcnn_coco.h5. Download and copy them to the Mask-RCNN subfolder of this project Instancefusion/deps/mask_rcnn.
 ## 3.How to run it?  
