@@ -1,6 +1,6 @@
 MODEL:
   META_ARCHITECTURE: "GeneralizedRCNN"
-  WEIGHT: "e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth"
+  WEIGHT: "/media/jun/Data/YangJun/Instancefusion/Instancefusion/deps/maskrcnn-benchmark-master/weights/e2e_mask_rcnn_fbnet_xirb16d_dsmask.pth"
   BACKBONE:
     CONV_BODY: FBNet
   FBNET:
